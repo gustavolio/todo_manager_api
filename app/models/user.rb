@@ -4,8 +4,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  #Virtual Attributes
-  attr_accessor :name
+  validates_uniqueness_of :auth_token
 
-  # validates_presence_of :name
+  def info
+    "#{email} - #{created_at}"
+  end
+  
 end
