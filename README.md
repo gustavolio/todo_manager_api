@@ -1,24 +1,22 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Descrição: API RESTFul em Ruby on Rails.
 
-Things you may want to cover:
+## Models:
+    * User:
+        * name;
+        * email;
+        * password;
+        * password_confirmation;
+    * Tasks:
+        * title;
+        * description;
+        * status; #True = Executada
+        * user; #Id do usuário que criou
+        * visible; #True = todos os usuários tem acesso
 
-* Ruby version
+## Testes:
+    * Foram implementados testes unitários do controller e model de usuários e da autenticação;
+    * Os testes do controller e model, em decorrência do tempo, não foram desenvolvidos;
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## O arquivo endpoints.json contém uma coleção com as requisições de teste executadas no postman.

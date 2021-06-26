@@ -35,8 +35,11 @@ class Api::V1::TasksController < ApplicationController
         task.destroy
         head 204
     end
-    
-    
+
+    def public_tasks
+        task = Task.where(visible: true)
+        render json: task
+    end
     
     private 
     def task_params
