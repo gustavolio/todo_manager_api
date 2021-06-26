@@ -1,0 +1,364 @@
+{
+	"info": {
+		"_postman_id": "a1ad9195-2e3e-4453-bcc0-3b148d8776ff",
+		"name": "Todo API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Cadastrar Usuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user\": {\r\n        \"email\": \"maria@joaquina.com\",\r\n        \"password\": 123456\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://api.todolist.test:3000/users?Content-Type=application/json&Accept=application/vnd.todolist.v1",
+					"protocol": "http",
+					"host": [
+						"api",
+						"todolist",
+						"test"
+					],
+					"port": "3000",
+					"path": [
+						"users"
+					],
+					"query": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Accept",
+							"value": "application/vnd.todolist.v1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Token do Usuario",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/vnd.taskmanager.v1",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "abc1233",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"session\": {\r\n        \"email\": \"maria@joaquina.com\",\r\n        \"password\": 123456\r\n    }\r\n}"
+				},
+				"url": {
+					"raw": "http://api.todolist.test:3000/sessions",
+					"protocol": "http",
+					"host": [
+						"api",
+						"todolist",
+						"test"
+					],
+					"port": "3000",
+					"path": [
+						"sessions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Tasks Privadas do Usuario",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/vnd.taskmanager.v1",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "eNRpAPWzTXuycvsxi6VE",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://api.todolist.test:3000/tasks",
+					"protocol": "http",
+					"host": [
+						"api",
+						"todolist",
+						"test"
+					],
+					"port": "3000",
+					"path": [
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cadastrar Task",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/vnd.taskmanager.v1",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "eNRpAPWzTXuycvsxi6VE",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"task\": {\r\n        \"title\": \"Lavar Carro\",\r\n        \"description\": \"User Detergente\"\r\n    }\r\n}"
+				},
+				"url": {
+					"raw": "http://api.todolist.test:3000/tasks",
+					"protocol": "http",
+					"host": [
+						"api",
+						"todolist",
+						"test"
+					],
+					"port": "3000",
+					"path": [
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar Task",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/vnd.taskmanager.v1",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "SyjyYqkn48_AqHoTmbuU",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"task\": {\r\n        \"title\": \"Alterando Titulo e Status\",\r\n        \"visible\": true\r\n    }\r\n}"
+				},
+				"url": {
+					"raw": "http://api.todolist.test:3000/tasks/3",
+					"protocol": "http",
+					"host": [
+						"api",
+						"todolist",
+						"test"
+					],
+					"port": "3000",
+					"path": [
+						"tasks",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Task Específica",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/vnd.taskmanager.v1",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "SyjyYqkn48_AqHoTmbuU",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://api.todolist.test:3000/tasks/3",
+					"protocol": "http",
+					"host": [
+						"api",
+						"todolist",
+						"test"
+					],
+					"port": "3000",
+					"path": [
+						"tasks",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deletar Task",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/vnd.taskmanager.v1",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "SyjyYqkn48_AqHoTmbuU",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://api.todolist.test:3000/tasks/2",
+					"protocol": "http",
+					"host": [
+						"api",
+						"todolist",
+						"test"
+					],
+					"port": "3000",
+					"path": [
+						"tasks",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/vnd.taskmanager.v1",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "abc1233",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://api.todolist.test:3000/sessions/SyjyYqkn48_AqHoTmbuU",
+					"protocol": "http",
+					"host": [
+						"api",
+						"todolist",
+						"test"
+					],
+					"port": "3000",
+					"path": [
+						"sessions",
+						"SyjyYqkn48_AqHoTmbuU"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Tasks Publicas",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/vnd.taskmanager.v1",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "sPg8dHkmyGzEGrn5x7Ws",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://api.todolist.test:3000/visible_tasks",
+					"protocol": "http",
+					"host": [
+						"api",
+						"todolist",
+						"test"
+					],
+					"port": "3000",
+					"path": [
+						"visible_tasks"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
